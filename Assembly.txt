@@ -1,0 +1,36 @@
+Registradores:
+
+$zero: constante zero (0)
+$at: assembler temporary
+$v0, v1: retornam resultados de funções
+$a0, $a1, $a2, $a3: argumentos de funções
+$ra: return address (endereço de retorno de uma função) - retorna ao ponto em que a função foi chamada
+$t1 a $t9: registradores temporários que podem ser modificados por funções
+$s1 a $s9: similares aos $t1 a $t9, mas salvam valores
+$k0 e $k1: registradores do kernel
+$gp: registrador de globais
+$sp: stack pointer (aponta para o inicio da stack e muda progressivamente)
+$fp: frame pointer (aponta pro inicio da pilha e não muda até que a função seja executada)
+
+
+
+Para atribuir um valor inteiro diretamente ao registrador, é usado li (load immidiate):
+
+li $v0, 1 - imprimir inteiro
+li $v0, 2 - imprimir float
+li $v0, 3 - imprimir double
+li $v0, 4 - imprimir string ou char
+li $v0, 5 - ler inteiro
+li $v0, 6 - ler float
+li $v0, 7 - ler double
+li $v0, 8 - ler string ou char
+li $v0, 10 - encerrar o programa principal
+
+
+programas assembly tem duas areas (.data e .text)
+
+.data - é colocado as especificacoes e variaveis, lida com a memoria em si
+
+.text - é colocado as instruções
+
+para transportar uma variavel para $v0, é utilizado "la"
